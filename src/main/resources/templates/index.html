@@ -10,9 +10,19 @@
     <h1>Main Page</h1>
     <p th:text="${message}"></p>
     <p th:text="${greetings}"></p>
-    <p>First Name: <span th:text="${person.firstName}"></span></p>
-    <p>Last Name: <span th:text="${person.lastName}"></span></p>
-    <p>Email: <span th:text="${person.email}"></span></p>
-    <p>Phone: <span th:text="${person.phone}"></span></p>
+    <table border="1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        <tr th:each="person : ${people}">
+            <td th:text="${person.firstName}"></td>
+            <td th:text="${person.lastName}"></td>
+            <td th:text="${person.email}"></td>
+            <td th:text="${person.phone}"></td>
+        </tr>
+    </table>
 </body>
 </html>
