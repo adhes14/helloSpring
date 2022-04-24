@@ -29,7 +29,8 @@ public class InitController {
         person2.setEmail("kguzman@mail.com");
         person2.setPhone("852369741");
         
-        List<People> people = Arrays.asList(person, person2);
+//        List<People> people = Arrays.asList(person, person2);
+        List<People> people = Arrays.asList();
         
         model.addAttribute("message", message);
         model.addAttribute("greetings", greetings);
