@@ -1,7 +1,9 @@
 package com.adhemar.web;
 
-import com.adhemar.dao.PeopleDao;
+import java.util.ArrayList;
+
 import com.adhemar.domains.People;
+import com.adhemar.service.PeopleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,11 +13,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class InitController {
     @Autowired
-    private PeopleDao peopleDao;
+    private PeopleService peopleService;
     
     @GetMapping("/")
     public String init(Model model) {
-        Iterable<People> people = peopleDao.findAll();
+        ArrayList<People> people = peopleService.listPeople();
         model.addAttribute("people", people);
         return "index";
     }
