@@ -21,20 +21,20 @@ public class PeopleServiceImpl implements PeopleService {
 
     @Override
     @Transactional
-    public void save(People person) {
-        peopleDao.save(person);
+    public void save(People people) {
+        peopleDao.save(people);
     }
 
     @Override
     @Transactional
-    public void delete(People person) {
-        peopleDao.delete(person);
+    public void delete(People people) {
+        peopleDao.delete(people);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public People findPerson(People person) {
-        return peopleDao.findById(person.getIdPerson()).orElse(null);
+    public People findPerson(People people) {
+        return peopleDao.findById(people.getIdPerson()).orElse(null);
     }
     
 }
