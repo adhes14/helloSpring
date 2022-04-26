@@ -3,7 +3,7 @@ package com.adhemar.service;
 import java.util.ArrayList;
 
 import com.adhemar.dao.PeopleDao;
-import com.adhemar.domains.People;
+import com.adhemar.domains.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,25 +15,25 @@ public class PeopleServiceImpl implements PeopleService {
 
     @Override
     @Transactional(readOnly = true)
-    public ArrayList<People> listPeople() {
-        return (ArrayList<People>) peopleDao.findAll();
+    public ArrayList<Person> listPeople() {
+        return (ArrayList<Person>) peopleDao.findAll();
     }
 
     @Override
     @Transactional
-    public void save(People people) {
+    public void save(Person people) {
         peopleDao.save(people);
     }
 
     @Override
     @Transactional
-    public void delete(People people) {
+    public void delete(Person people) {
         peopleDao.delete(people);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public People findPerson(People people) {
+    public Person findPerson(Person people) {
         return peopleDao.findById(people.getIdPerson()).orElse(null);
     }
     

@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "people")
-public class People implements Serializable {
+public class Person implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id

@@ -2,14 +2,14 @@ package com.adhemar.service;
 
 import java.util.ArrayList;
 
-import com.adhemar.domains.People;
+import com.adhemar.domains.Person;
 
 public interface PeopleService {
-    public ArrayList<People> listPeople();
+    public ArrayList<Person> listPeople();
 
-    public void save(People person);
+    public void save(Person person);
 
-    public void delete(People person);
+    public void delete(Person person);
 
-    public People findPerson(People person);
+    public Person findPerson(Person person);
 }

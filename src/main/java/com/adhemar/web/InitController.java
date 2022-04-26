@@ -2,7 +2,7 @@ package com.adhemar.web;
 
 import java.util.ArrayList;
 
-import com.adhemar.domains.People;
+import com.adhemar.domains.Person;
 import com.adhemar.service.PeopleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,19 +18,26 @@ public class InitController {
     
     @GetMapping("/")
     public String init(Model model) {
-        ArrayList<People> people = peopleService.listPeople();
+        ArrayList<Person> people = peopleService.listPeople();
         model.addAttribute("people", people);
         return "index";
     }
 
     @GetMapping("/add")
-    public String add(People people) {
+    public String add(Person people) {
         return "modify";
     }
 
     @PostMapping("/save")
-    public String save(People people) {
+    public String save(Person people) {
         peopleService.save(people);
         return "redirect:/";
+    }
+
+    @GetMapping("/edit/{idPerson}")
+    public String edit(Person people, Model model) {
+        people = peopleService.findPerson(people);
+        model.addAttribute("people", people);
+        return "modify";
     }
 }

@@ -1,8 +1,8 @@
 package com.adhemar.dao;
 
-import com.adhemar.domains.People;
+import com.adhemar.domains.Person;
 import org.springframework.data.repository.CrudRepository;
 
-public interface PeopleDao extends CrudRepository<People, Long> {
+public interface PeopleDao extends CrudRepository<Person, Long> {
     
 }

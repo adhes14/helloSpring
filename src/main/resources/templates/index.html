@@ -16,12 +16,16 @@
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 <tr th:each="person : ${people}">
                     <td th:text="${person.firstName}"></td>
                     <td th:text="${person.lastName}"></td>
                     <td th:text="${person.email}"></td>
                     <td th:text="${person.phone}"></td>
+                    <td><a th:href="@{/edit/} + ${person.idPerson}">Edit</a></td>
+                    <td><a th:href="@{/delete}">Delete</a></td>
                 </tr>
             </table>
         </div>
