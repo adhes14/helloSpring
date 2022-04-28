@@ -24,20 +24,26 @@ public class InitController {
     }
 
     @GetMapping("/add")
-    public String add(Person people) {
+    public String add(Person person) {
         return "modify";
     }
 
     @PostMapping("/save")
-    public String save(Person people) {
-        peopleService.save(people);
+    public String save(Person person) {
+        peopleService.save(person);
         return "redirect:/";
     }
 
     @GetMapping("/edit/{idPerson}")
-    public String edit(Person people, Model model) {
-        people = peopleService.findPerson(people);
-        model.addAttribute("people", people);
+    public String edit(Person person, Model model) {
+        person = peopleService.findPerson(person);
+        model.addAttribute("person", person);
         return "modify";
+    }
+    
+    @GetMapping("/delete/{idPerson}")
+    public String delete(Person person) {
+        peopleService.delete(person);
+        return "redirect:/";
     }
 }

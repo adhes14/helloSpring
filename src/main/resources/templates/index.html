@@ -25,7 +25,7 @@
                     <td th:text="${person.email}"></td>
                     <td th:text="${person.phone}"></td>
                     <td><a th:href="@{/edit/} + ${person.idPerson}">Edit</a></td>
-                    <td><a th:href="@{/delete}">Delete</a></td>
+                    <td><a th:href="@{/delete/} + ${person.idPerson}">Delete</a></td>
                 </tr>
             </table>
         </div>
