@@ -41,7 +41,7 @@ public class InitController {
         return "modify";
     }
     
-    @GetMapping("/delete/{idPerson}")
+    @GetMapping("/delete")
     public String delete(Person person) {
         peopleService.delete(person);
         return "redirect:/";
