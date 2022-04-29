@@ -2,12 +2,15 @@ package com.adhemar.web;
 
 import java.util.ArrayList;
 
+import javax.validation.Valid;
+
 import com.adhemar.domains.Person;
 import com.adhemar.service.PeopleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -29,7 +32,10 @@ public class InitController {
     }
 
     @PostMapping("/save")
-    public String save(Person person) {
+    public String save(@Valid Person person, Errors errors) {
+        if(errors.hasErrors()) {
+            return "modify";
+        }
         peopleService.save(person);
         return "redirect:/";
     }

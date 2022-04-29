@@ -26,6 +26,8 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'javax.validation:validation-api'
+	implementation 'org.hibernate.validator:hibernate-validator'
 	runtimeOnly 'mysql:mysql-connector-java'
 }
 
