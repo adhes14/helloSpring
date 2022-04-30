@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person information</title>
+</head>
+<body>
+    <h1>Person's information</h1>
+    <a th:href="@{/}">Back</a>
+    <form th:action="@{/save}" method="post" th:object="${person}">
+        <input type="hidden" name="idPerson" th:field="*{idPerson}">
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" th:field="*{firstName}">
+            <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">first name error</p>
+        </div>
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" th:field="*{lastName}">
+            <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">last name error</p>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" th:field="*{email}">
+            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email error</p>
+        </div>
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="tel" name="phone" th:field="*{phone}">
+        </div>
+        <input type="submit" name="save" value="save">
+    </form>
+</body>
+</html>
