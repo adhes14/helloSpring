@@ -8,11 +8,11 @@
 </head>
 <body>
     <header th:fragment="header">
-        <h1>Client management</h1>
+        <h1 th:text="#{template.tittle}"></h1>
     </header>
 
     <footer th:fragment="footer">
-        <p>Copy Right <a href="https://www.google.com" target="_blank">Adhes</a></p>
+        <p>[[#{template.footer}]] <a href="https://www.google.com" target="_blank">Adhes</a></p>
     </footer>
 </body>
 </html>
