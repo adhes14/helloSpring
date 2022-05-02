@@ -12,7 +12,13 @@
     </header>
 
     <footer th:fragment="footer">
-        <p>[[#{template.footer}]] <a href="https://www.google.com" target="_blank">Adhes</a></p>
+        <div>
+            <p>
+                <a th:href="@{/(lang=es)}">ES</a>|
+                <a th:href="@{/(lang=en)}">EN</a>|
+                [[#{template.footer}]] <a href="https://www.google.com" target="_blank">Adhes</a>
+            </p>
+        </div>
     </footer>
 </body>
 </html>
