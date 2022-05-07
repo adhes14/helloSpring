@@ -8,6 +8,8 @@ import com.adhemar.domains.Person;
 import com.adhemar.service.PeopleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -20,9 +22,10 @@ public class InitController {
     private PeopleService peopleService;
     
     @GetMapping("/")
-    public String init(Model model) {
+    public String init(Model model, @AuthenticationPrincipal User user) {
         ArrayList<Person> people = peopleService.listPeople();
         model.addAttribute("people", people);
+        model.addAttribute("user", user.getUsername());
         return "index";
     }
 

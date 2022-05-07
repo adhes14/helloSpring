@@ -32,6 +32,7 @@
         <div th:if="${people == null or people.empty}">
             <p>[[#{person.emptyList}]]</p>
         </div>
+        <p th:text="${user}"></p>
 
         <footer th:replace="layout/template :: footer"></footer>
     </body>
