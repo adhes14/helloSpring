@@ -18,6 +18,9 @@
                 <a th:href="@{/(lang=en)}">EN</a>|
                 [[#{template.footer}]] <a href="https://www.google.com" target="_blank">Adhes</a>
             </p>
+            <form method="post" th:action="@{/logout}">
+                <a href="#" onclick="this.parentNode.submit();">Logout</a>
+            </form>
         </div>
     </footer>
 </body>
